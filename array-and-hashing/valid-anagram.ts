@@ -1,4 +1,4 @@
-type CharacterCounterMap = {[key: string]: number};
+type CharacterCounterMap = Record<string, number>;
 
 function getCharacterCounterMap(str: string) {
     const counter: CharacterCounterMap = {};
