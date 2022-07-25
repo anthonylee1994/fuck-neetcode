@@ -1,7 +1,7 @@
-type Counter = {[key: string]: number};
+type CharacterCounterMap = {[key: string]: number};
 
-function calculateCharCounts(str: string) {
-    const counter: Counter = {};
+function getCharacterCounterMap(str: string) {
+    const counter: CharacterCounterMap = {};
 
     for (let c of str) {
         if (counter[c]) {
@@ -14,19 +14,23 @@ function calculateCharCounts(str: string) {
     return counter;
 }
 
-function isAnagram(s: string, t: string): boolean {
-    if (s.length !== t.length) {
-        return false;
-    }
-
-    const countS: Counter = calculateCharCounts(s);
-    const countT: Counter = calculateCharCounts(t);
-
-    for (let c in countS) {
-        if (countS[c] !== countT[c]) {
+function isEqual(a: CharacterCounterMap, b: CharacterCounterMap) {
+    for (let char in a) {
+        if (a[char] !== b[char]) {
             return false;
         }
     }
 
     return true;
+}
+
+function isAnagram(s: string, t: string): boolean {
+    if (s.length !== t.length) {
+        return false;
+    }
+
+    const sCharacterCounterMap: CharacterCounterMap = getCharacterCounterMap(s);
+    const tCharacterCounterMap: CharacterCounterMap = getCharacterCounterMap(t);
+
+    return isEqual(sCharacterCounterMap, tCharacterCounterMap);
 }
