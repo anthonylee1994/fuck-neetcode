@@ -1,4 +1,4 @@
-# Fuck Neetcode
+# Fuck Neetcode & Fuck Leetcode
 
 `八股文`又稱股賦、四書文、八比文、八章文、時文、時藝、制藝、制義，是中國明、清皇朝及越南阮朝考試制度中所規定的一種特殊文體。
 
